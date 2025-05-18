@@ -101,7 +101,9 @@ TAMILMV_URL=https://www.1tamilmv.fi
     <div class="section docker">
       <h2>🐳 Docker Configuration</h2>
       <ul>
-        <li><strong>Image:</strong> <code>docker.io/woodcraftbot/1tamilmv-bot:latest</code></li>
+        <li>Use image: <code id="dockerImage">docker.io/woodcraftbot/1tamilmv-bot:latest</code>
+          <button onclick="copyDockerImage()" style="margin-left: 10px;">Copy</button>
+        </li>
         <li><strong>Port:</strong> <code>3000</code> (default)</li>
       </ul>
     </div>
@@ -130,7 +132,9 @@ TAMILMV_URL=https://www.1tamilmv.fi
       <ol>
         <li>Sign up at <a href="https://www.koyeb.com/" target="_blank">Koyeb</a></li>
         <li>Create App → "Deploy from Docker"</li>
-        <li>Use image: <code>docker.io/woodcraftbot/1tamilmv-bot:latest</code></li>
+        <li>Use image: <code id="dockerImage">docker.io/woodcraftbot/1tamilmv-bot:latest</code>
+          <button onclick="copyDockerImage()" style="margin-left: 10px;">Copy</button>
+        </li>
         <li>Add env variables</li>
         <li>Deploy</li>
       </ol>
@@ -211,6 +215,16 @@ function copyToClipboard(elementId) {
     alert('Failed to copy text: ' + err);
   });
 }
+  </script>
+  <script>
+  function copyDockerImage() {
+    const text = document.getElementById("dockerImage").innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      alert("Copied to clipboard!");
+    }).catch(err => {
+      alert("Failed to copy!");
+    });
+  }
   </script>
 </body>
             </html>
