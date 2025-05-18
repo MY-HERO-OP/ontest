@@ -2,6 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Deploy your TamilMV Magnet Bot easily with this detailed guide for Render and Koyeb.">
+<meta name="keywords" content="TamilMV, Telegram Bot, Magnet Link Bot, Docker, Render, Koyeb, Deployment Guide">
+<meta name="author" content="WOODcraft Team">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>TamilMV Magnet Bot Deployment Guide</title>
   <style>
     body {
@@ -81,15 +86,17 @@
     </div>
 
     <div class="section env">
-      <h2>⚙️ Environment Variables Setup</h2>
-      <strong>Key | Value</strong>
-      <pre><code>
+  <h2>⚙️ Environment Variables Setup</h2>
+  <strong>Key | Value</strong>
+  <pre style="position:relative;"><code id="envVars">
 TOKEN=600009999:AAHpBhz5ot-yyy66
 CHANNEL_ID=-10044009977
 CHANNEL_USERNAME=Tamilmv_Magnet_Link
 WEBHOOK_URL=https://your-website.app
 TAMILMV_URL=https://www.1tamilmv.fi
-      </code></pre>
+  </code>
+  <button onclick="copyToClipboard('envVars')" style="position:absolute; top:8px; right:8px; background:#2196F3; color:white; border:none; padding:5px 10px; border-radius:4px; cursor:pointer;">Copy</button>
+  </pre>
     </div>
 
     <div class="section docker">
@@ -196,5 +203,15 @@ TAMILMV_URL=https://www.1tamilmv.fi
     </div>
 
   </div>
+  <script>
+function copyToClipboard(elementId) {
+  const text = document.getElementById(elementId).innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    alert('Copied to clipboard!');
+  }).catch(err => {
+    alert('Failed to copy text: ' + err);
+  });
+}
+  </script>
 </body>
             </html>
